@@ -59,7 +59,6 @@ def scrape_mercado_libre(search_query, max_results):
 
         item_count += 50
 
-    # Calculate statistics
     if result_prices:
         minimo = min(result_prices)
         maximo = max(result_prices)

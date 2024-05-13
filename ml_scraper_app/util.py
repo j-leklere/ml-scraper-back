@@ -35,13 +35,13 @@ class Scraper:
         if posts:
             return posts
         else:
-            print(bcolors.FAIL + "No posts were found." + bcolors.ENDCs)
+            print(bcolors.FAIL + "Sin resultados." + bcolors.ENDCs)
             return False
 
     def get_num_pages(self):
         num_pages = math.ceil(
             self.num_results / 20
-        )  # number of results / number of posts per page
+        )
         print(num_pages)
         return num_pages
 
@@ -57,7 +57,7 @@ def output_posts_info(posts, price, address, location, expenses, all_features, l
     else:
         print(bcolors.WARNING + "Expensas: Publicación sin expensas" + bcolors.ENDC)
 
-    if all_features:  # Check if there are any features before trying to access them
+    if all_features:
         span_tags = all_features[0].findAll("span")
         features_str = ""
         for span in span_tags:
