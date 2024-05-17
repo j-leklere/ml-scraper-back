@@ -21,14 +21,16 @@ def parse_page(html):
     results = []
     for listing in listings:
         title_element = listing.find('h2', class_='ui-search-item__title')
+        currency_element = listing.find('span', class_='andes-money-amount__currency-symbol')
         price_element = listing.find('span', class_='andes-money-amount__fraction')
         link_element = listing.find('a', class_='ui-search-link')
 
         title = title_element.text.strip() if title_element else 'Título no disponible'
         price = price_element.text.replace('.', '').replace(',', '.') if price_element else '0'
+        currency = currency_element.text.replace('.', '').replace(',', '.') if currency_element else 'Moneda no disponible'
         link = link_element['href'] if link_element else 'Enlace no disponible'
 
-        results.append({'title': title, 'price': price, 'link': link})
+        results.append({'title': title, 'price': price,'currency': currency, 'link': link})
     return results
 
 def scrape_mercado_libre(search_query, max_results):
@@ -59,6 +61,8 @@ def scrape_mercado_libre(search_query, max_results):
 
         item_count += 50
 
+    results = sorted(results, key=lambda x: x['price'])
+    
     if result_prices:
         minimo = min(result_prices)
         maximo = max(result_prices)
