@@ -1,0 +1,518 @@
+    1  [200~
+    2  ssh root@191.96.251.10~
+    3  jsj-scraper.com
+    4  ssh root@191.96.251.10~
+    5  ssh root@191.96.251.10
+    6  [200~sudo certbot --nginx -d jsj-scraper.com -d www.jsj-scraper.com~sudo certbot --nginx -d jsj-scraper.com -d www.jsj-scraper.com
+    7  sudo certbot --nginx -d jsj-scraper.com -d www.jsj-scraper.com
+    8  sudo cat /home/ubuntu/.litespeed_password
+    9  sudo certbot --nginx -d jsj-scraper.com -d www.jsj-scraper.com
+   10  sudo apt update && sudo apt upgrade -y
+   11  sudo apt install python3-pip python3-venv nginx
+   12  git clone https://github.com/j-leklere/ml-scraper-back.git
+   13  cd ml-scraper-back
+   14  python3 -m venv venv
+   15  apt install python3.10-venv
+   16  python3 -m venv venv
+   17  sudo apt update
+   18  sudo apt --fix-broken install
+   19  sudo apt install python3.10-venv
+   20  sudo apt update
+   21  sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+   22  curl https://pyenv.run | bash
+   23  export PATH="$HOME/.pyenv/bin:$PATH"
+   24  eval "$(pyenv init --path)"
+   25  eval "$(pyenv init -)"
+   26  eval "$(pyenv virtualenv-init -)"
+   27  nano ~/.bashrc
+   28  source ~/.bashrc
+   29  pyenv install 3.10.4
+   30  source ~/.bashrc
+   31  pyenv install 3.10.4
+   32  pyenv global 3.10.4
+   33  python -m venv venv
+   34  source venv/bin/activate
+   35  pip install django gunicorn
+   36  pyenv global 3.10.4
+   37  python -m venv venv
+   38  sudo apt install python3.10-venv
+   39  sudo apt update
+   40  sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+   41  curl https://pyenv.run | bash
+   42  rm -rf ~/.pyenv
+   43  curl https://pyenv.run | bash
+   44  nano ~/.bashrc
+   45  ssh -i ~/.ssh/id_rsa root@191.96.251.10
+   46  ssh -i /c/Users/jlekl/.ssh/id_rsa root@191.96.251.10
+   47  ssh-keygen -f "/root/.ssh/known_hosts" -R "191.96.251.10"
+   48  ssh-keygen -f "/c/Users/jlekl/.ssh/known_hosts" -R "191.96.251.10"
+   49  ssh -i /c/Users/jlekl/.ssh/id_rsa root@191.96.251.10
+   50  sudo nano /etc/nginx/sites-available/default
+   51  sudo systemctl restart nginx
+   52  sudo nano /etc/apache2/sites-available/000-default.conf
+   53  sudo a2enmod ssl
+   54  sudo systemctl restart apache2
+   55  sudo systemctl status certbot.timer
+   56  sudo apt update
+   57  sudo certbot --nginx
+   58  sudo nano /etc/nginx/sites-available/default
+   59  sudo systemctl stop nginx
+   60  sudo pkill -f nginx
+   61  sudo lsof -i :80
+   62  sudo lsof -i :443
+   63  sudo nginx -t
+   64  sudo systemctl start nginx
+   65  sudo systemctl status nginx
+   66  [200~sudo systemctl stop lsws
+   67  sudo systemctl stop lsws
+   68  sudo lsof -i :80
+   69  sudo lsof -i :443
+   70  sudo kill 700
+   71  sudo lsof -i :80
+   72  sudo lsof -i :443
+   73  sudo systemctl start nginx
+   74  sudo systemctl status nginx
+   75  ls /etc/nginx/sites-available/
+   76  sudo nano /etc/nginx/sites-available/default
+   77  sudo nano /etc/nginx/sites-available/ml-scraper
+   78  sudo nano /etc/nginx/sites-available/default
+   79  sudo rm /etc/nginx/sites-enabled/default
+   80  sudo rm /etc/nginx/sites-enabled/ml-scraper
+   81  sudo ln -s /etc/nginx/sites-available/ml-scraper /etc/nginx/sites-enabled/
+   82  sudo nginx -t
+   83  sudo systemctl restart nginx
+   84  sudo nano /etc/nginx/sites-available/ml-scraper
+   85  sudo systemctl restart nginx
+   86  sudo nano /etc/nginx/sites-available/default
+   87  sudo systemctl restart nginx
+   88  sudo status nginx
+   89  sudo systemctl status nginx
+   90  sudo nano /etc/nginx/sites-available/ml-scraper
+   91  ls /var/www/frontend
+   92  ls
+   93  cd ./ml-scraper-back
+   94  ls
+   95  sudo mkdir -p /var/www/frontend
+   96  sudo mv ~/ml-scraper-back/ml-scraper-front/* /var/www/frontend/
+   97  ls
+   98  sudo chown -R www-data:www-data /var/www/frontend
+   99  [200~sudo chmod -R 755 /var/www/frontend~
+  100  sudo chmod -R 755 /var/www/frontend
+  101  sudo nano /etc/nginx/sites-available/ml-scraper
+  102  sudo nginx -t
+  103  sudo systemctl restart nginx
+  104  cd ../
+  105  sudo mkdir -p /var/www/frontend
+  106  ls
+  107  sudo mv ~/ml-scraper-back/ml-scraper-front/* /var/www/frontend/
+  108  sudo mv ml-scraper-back/ml-scraper-front/* /var/www/frontend/
+  109  sudo mv ./ml-scraper-back/ml-scraper-front/* /var/www/frontend/
+  110  ls
+  111  cd ml-scraper-back/
+  112  ls
+  113  rm -rf ml-scraper-front/
+  114  ls
+  115  sudo ufw enable
+  116  sudo ufw status numbered
+  117  curl -v
+  118  curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+  119  apt-get install nodejs -y
+  120  node -v
+  121  apt-get uninstall nodejs
+  122  apt-get remove nodejs
+  123  node -v
+  124  apt-get install nodejs -y
+  125  node -v
+  126  apt-get remove --purge nodejs
+  127  apt autoremove
+  128  apt-get install nodejs -y
+  129  node -v
+  130  npm -v
+  131  git -help
+  132  ls
+  133  history
+  134  ls
+  135  ls ..
+  136  cd ..
+  137  ls
+  138  ls -a
+  139  cd /var/www/
+  140  ls
+  141  ls frontend/
+  142  ls html/
+  143  vim html/index.
+  144  vim html/index.html 
+  145  clear
+  146  ls 
+  147  ls frontend/
+  148  ls html/
+  149  cd frontend/
+  150  npm start
+  151  cd ..
+  152  ls
+  153  ls -
+  154  ls /
+  155  ls /home/
+  156  ls /home/ubuntu/
+  157  git clone https://github.com/j-leklere/ml-scraper-back.git
+  158  ls
+  159  ls html
+  160  rm -rf frontend/
+  161  rm -rf html/
+  162  ls
+  163  ls /
+  164  ls -a /
+  165  ls /srv/
+  166  ls ~
+  167  cd ~
+  168  cat 'udo apt update' 
+  169  ls -lh
+  170  vim 'udo apt update' 
+  171  rm 'udo apt update' 
+  172  ls
+  173  rm -rf ml-scraper-back/
+  174  ls
+  175  ls /etc/nginx/
+  176  ls /etc/nginx/sites-enabled/
+  177  ls 
+  178  ls -lh /etc/nginx/sites-enabled/
+  179  rm /etc/nginx/sites-enabled/ml-scraper 
+  180  ls /etc/nginx/sites-enabled/
+  181  sudo systemctl restart nginx
+  182  ls /home/
+  183  ls /home/ubuntu/
+  184  ls
+  185  cwd
+  186  powd
+  187  pwd
+  188  cd /home/ubuntu/
+  189  git clone https://github.com/j-leklere/ml-scraper-back.git
+  190  ls
+  191  cd ml-scraper-back/
+  192  ls
+  193  virtualenv env
+  194  ls
+  195  ls -lh
+  196  cat env
+  197  ls env/
+  198  source env/bin/activate
+  199  pip freeze > requirements.txt
+  200  cat requirements.txt 
+  201  pip list
+  202  vim requirements.txt 
+  203  cat requirements.txt 
+  204  pip install requirements.txt 
+  205  pip install -r requirements.txt 
+  206  vim requirements.txt 
+  207  pip install -r requirements.txt 
+  208  vim requirements.txt 
+  209  pip install -r requirements.txt 
+  210  python manage.py collectstatic
+  211  vim requirements.txt 
+  212  pip install -r requirements.txt 
+  213  pip install gunicorn
+  214  sudo nano /etc/systemd/system/gunicorn.service 
+  215  vim /etc/systemd/system/gunicorn.service 
+  216  sudo systemctl start gunicorn
+  217  systemctl daemon-reload 
+  218  sudo systemctl start gunicorn
+  219  sudo systemctl enable gunicorn
+  220  vim /etc/nginx/sites-available/ml-scraper-back
+  221  sudo ln -s /etc/nginx/sites-available/ml-scraper-back /etc/nginx/sites-enabled/
+  222  sudo nginx -t
+  223  vim /etc/nginx/sites-available/ml-scraper-back
+  224  sudo nginx -t
+  225  cat /etc/nginx/sites-available/ml-scraper-back
+  226  sudo nginx -t
+  227  vim /etc/nginx/sites-available/ml-scraper-back
+  228  sudo nginx -t
+  229  sudo systemctl restart nginx
+  230  sudo systemctl status gunicorn
+  231  sudo systemctl status nginx
+  232  sudo journalctl -u gunicorn
+  233  sudo systemctl status gunicorn
+  234  ls /home/ubuntu/ml-scraper-back/env/bin/
+  235  ls /home/ubuntu/ml-scraper-back/env/bin/gunicorn 
+  236  vim /etc/nginx/sites-available/ml-scraper-back
+  237  vim /etc/systemd/system/gunicorn.service 
+  238  sudo nginx -t
+  239  sudo systemctl reload nginx
+  240  sudo chmod 660 /home/ubuntu/ml-scraper-back/gunicorn.sock
+  241  vim /etc/systemd/system/gunicorn.service 
+  242  sudo nginx -t
+  243  sudo systemctl reload nginx
+  244  sudo systemctl start gunicorn
+  245  systemctl daemon-reload
+  246  sudo systemctl start gunicorn
+  247  sudo systemctl enable gunicorn
+  248  sudo systemctl status gunicorn.service 
+  249  sudo systemctl status gunicorn
+  250  ls /root/
+  251  ls -a /root/
+  252  cat /etc/systemd/system/gunicorn.service 
+  253  sudo systemctl restart gunicorn
+  254  sudo systemctl status gunicorn
+  255  cat /etc/systemd/system/gunicorn.service 
+  256  vim /etc/systemd/system/gunicorn.service 
+  257  sudo systemctl restart gunicorn
+  258  systemctl daemon-reload
+  259  sudo systemctl restart gunicorn
+  260  sudo systemctl status gunicorn
+  261  vim /etc/systemd/system/gunicorn.service 
+  262  sudo systemctl restart gunicorn
+  263  systemctl daemon-reload
+  264  sudo systemctl restart gunicorn
+  265  sudo systemctl status gunicorn
+  266  sudo journalctl -u gunicorn
+  267  source /home/ubuntu/ml-scraper-back/env/bin/activate
+  268  ls -a /home/ubuntu/ml-scraper-back/
+  269  touch /home/ubuntu/ml-scraper-back/gunicorn.sock
+  270  sudo chmod 660 /home/ubuntu/ml-scraper-back/gunicorn.sock 
+  271  sudo chown root:www-data /home/ubuntu/ml-scraper-back/gunicorn.sock 
+  272  cat /etc/nginx/sites-available/ml-scraper-back
+  273  vim /etc/nginx/sites-available/ml-scraper-back
+  274  sudo systemctl daemon-reload 
+  275  sudo systemctl restart gunicorn
+  276  sudo systemctl status gunicorn
+  277  sudo chmod 755 /home/ubuntu/ml-scraper-back/
+  278  sudo chown root:www-data /home/ubuntu/ml-scraper-back/
+  279  sudo systemctl daemon-reload
+  280  sudo systemctl restart gunicorn
+  281  sudo systemctl status gunicorn
+  282  rm /home/ubuntu/ml-scraper-back/gunicorn.sock 
+  283  ls /home/ubuntu/ml-scraper-back/
+  284  sudo systemctl status gunicorn.service
+  285  sudo systemctl stop gunicorn
+  286  pip uninstall gunicorn
+  287  cd /
+  288  cd ~
+  289  ls
+  290  pip uninstall gunicorn
+  291  vim /etc/systemd/system/gunicorn.service 
+  292  cat /etc/systemd/system/gunicorn.service 
+  293  sudo systemctl daemon-reload 
+  294  sudo systemctl restart gunicorn
+  295  sudo systemctl status gunicorn
+  296  ls -a /home/ubuntu/ml-scraper-back/
+  297  gunicorn --log-file=-
+  298  ls -lh /home/ubuntu/ml-scraper-back/
+  299  vim /etc/systemd/system/gunicorn.service 
+  300  sudo systemctl daemon-reload 
+  301  sudo systemctl restart gunicor
+  302  sudo systemctl restart gunicorn
+  303  sudo systemctl status gunicorn
+  304  vim /etc/systemd/system/gunicorn.service 
+  305  sudo systemctl daemon-reload 
+  306  sudo systemctl restart gunicorn
+  307  sudo systemctl status gunicorn
+  308  ls -lh /home/ubuntu/ml-scraper-back/
+  309  vim /etc/systemd/system/gunicorn.service 
+  310  sudo systemctl daemon-reload 
+  311  sudo systemctl restart gunicorn
+  312  sudo systemctl status gunicorn
+  313  ls /home/ubuntu/ml-scraper-back/ml_scraper
+  314  vim /etc/systemd/system/gunicorn.service 
+  315  sudo systemctl daemon-reload 
+  316  sudo systemctl restart gunicorn
+  317  sudo systemctl status gunicorn
+  318  vim /etc/systemd/system/gunicorn.service 
+  319  sudo systemctl daemon-reload 
+  320  sudo systemctl restart gunicorn.service 
+  321  sudo systemctl status gunicorn.service 
+  322  vim /etc/systemd/system/gunicorn.service 
+  323  sudo systemctl daemon-reload 
+  324  sudo systemctl restart gunicorn.service 
+  325  sudo systemctl status gunicorn.service 
+  326  cd /home/ubuntu/ml-scraper-back/
+  327  ls -a
+  328  vim requirements.txt 
+  329  pip install -r requirements.txt 
+  330  sudo systemctl daemon-reload 
+  331  sudo systemctl restart gunicorn.service 
+  332  sudo systemctl status gunicorn.service 
+  333  sudo journalctl -u gunicorn.service 
+  334  sudo nginx -t
+  335  sudo systemctl restart nginx
+  336  vim /etc/nginx/sites-available/ml-scraper
+  337  rm -rf /etc/nginx/sites-available/ml-scraper
+  338  vim /etc/nginx/sites-available/ml-scraper-back 
+  339  systemctl status gunicorn.service 
+  340  sudo nginx -t
+  341  sudo systemctl restart nginx
+  342  curl -I http://http://191.96.251.10/
+  343  curl -I https://http://191.96.251.10/
+  344  http http://http://191.96.251.10/
+  345  systemctl status gunicorn.service 
+  346  sudo journalctl -u gunicorn.service 
+  347  sudo systemctl restart gunicorn.service 
+  348  sudo journalctl -u gunicorn.service 
+  349  sudo chown www-data:www-data /home/ubuntu/ml-scraper-back/gunicorn.sock 
+  350  sudo chmod 664 /home/ubuntu/ml-scraper-back/gunicorn.sock 
+  351  sudo systemctl restart nginx
+  352  sudo systemctl status nginx.service 
+  353  sudo chmod 664 /home/ubuntu/ml-scraper-back/gunicorn.sock 
+  354  sudo ufw status
+  355  sudo ufw enable
+  356  sudo ufw allow 'Nginx Full'
+  357  sudo ufw allow 'Nginx HTTP'
+  358  sudo ufw status
+  359  sudo ufw reload
+  360  sudo ufw enable
+  361  sudo tail -n 10 /var/log/nginx/error.log
+  362  vim /home/ubuntu/ml-scraper-back/ml_scraper/settings.py 
+  363  sudo systemctl restart gunicorn.service 
+  364  sudo systemctl restart nginx.service 
+  365  curl --unix-socket gunicorn.sock
+  366  vim /home/ubuntu/ml-scraper-back/ml_scraper/settings.py 
+  367  cat /etc/nginx/sites-available/ml-scraper-back 
+  368  vim /etc/nginx/sites-available/ml-scraper-back 
+  369  cat /etc/nginx/sites-available/ml-scraper-back 
+  370  sudo systemctl restart gunicorn.service 
+  371  sudo systemctl restart nginx.service 
+  372  sudo systemctl status nginx.service 
+  373  sudo systemctl status gunicorn.service 
+  374  ps aux | grep unicorn
+  375  ls
+  376  history > history.txt
+  377  cat history.txt 
+  378  vim /etc/systemd/system/gunicorn.service 
+  379  vim /etc/nginx/sites-available/ml-scraper-back 
+  380  cat /etc/nginx/sites-available/ml-scraper-back 
+  381  cat /etc/systemd/system/gunicorn.service 
+  382  cat /var/log/nginx/access.log
+  383  cat /var/log/nginx/error.log
+  384  ls -l /home/ubuntu/ml-scraper-back/gunicorn.sock 
+  385  vim /etc/systemd/system/gunicorn.service 
+  386  vim /etc/nginx/nginx.conf 
+  387  sudo systemctl restart nginx
+  388  sudo systemctl status nginx.service 
+  389  ls -lh /home/ubuntu/ml-scraper-back/
+  390  vim /home/ubuntu/ml-scraper-back/ml_scraper/settings.py 
+  391  sudo systemctl restart nginx
+  392  sudo systemctl status nginx.service 
+  393  vim /home/ubuntu/ml-scraper-back/ml_scraper/settings.py 
+  394  sudo systemctl restart nginx
+  395  sudo systemctl status nginx.service 
+  396  sudo systemctl restart nginx
+  397  cat /etc/nginx/sites-available/ml-scraper-back 
+  398  vim /etc/nginx/sites-available/ml-scraper-back 
+  399  sudo systemctl restart nginx
+  400  sudo systemctl status nginx.service 
+  401  vim /home/ubuntu/ml-scraper-back/ml_scraper/settings.py 
+  402  sudo systemctl restart nginx
+  403  sudo systemctl status nginx
+  404  cat /home/ubuntu/ml-scraper-back/ml_scraper/settings.py 
+  405  vim /etc/nginx/sites-available/ml-scraper-back 
+  406  sudo apt update
+  407  sudo apt install certbot python3-certbot-nginx
+  408  sudo certbot --nginx
+  409  vim /etc/nginx/sites-available/ml-scraper-back 
+  410  vim /etc/systemd/system/gunicorn.service 
+  411  cat /home/ubuntu/ml-scraper-back/ml_scraper/settings.py 
+  412  vim /home/ubuntu/ml-scraper-back/ml_scraper/settings.py 
+  413  sudo certbot --nginx
+  414  sudo systemctl restart nginx.service 
+  415  systemctl status nginx.service 
+  416  sudo systemctl restart nginx.service 
+  417  sudo systemctl start nginx
+  418  journalctl -xeu nginx.service
+  419  sudo systemctl restart nginx
+  420  vim /etc/nginx/sites-available/ml-scraper-back 
+  421  sudo systemctl restart nginx.service 
+  422  sudo nginx -t
+  423  sudo tail -n 30 /var/log/nginx/error.log
+  424  sudo systemctl reload nginx
+  425  sudo systemctl daemon-reload 
+  426  sudo systemctl restart gunicorn.service 
+  427  sudo systemctl restart nginx.service 
+  428  sudo systemctl status nginx.service 
+  429  sudo netstat -tuln | grep ':80\|:443'
+  430  sudo lsof -i :443
+  431  sudo systemctl stop nginx
+  432  sudo systemctl start nginx
+  433  vim /etc/systemd/system/gunicorn.service 
+  434  sudo lsof -i :443
+  435  sudo systemctl stop lsws
+  436  sudo lsof -i :443
+  437  sudo systemctl start nginx
+  438  sudo systemctl status nginx
+  439  tail -n 40 /var/log/nginx/access.log
+  440  sudo systemctl restart gunicorn
+  441  sudo systemctl restart nginx.service 
+  442  sudo systemctl restart gunicorn.service 
+  443  sudo systemctl status gunicorn.service 
+  444  sudo systemctl status nginx.service 
+  445  sudo tail -n 50 /var/log/nginx/error.log
+  446  sudo tail -n 50 /var/log/nginx/access.log
+  447  cd /home/ubuntu/ml-scraper-back/
+  448  git add .
+  449  git commit -m "changes for vps config"
+  450  git config --global --edit
+  451  git commit --amend --reset-author
+  452  git push
+  453  ssh-keygen -t rsa -b 4096 -C "santiagoleklere@gmail.com"
+  454  cat /root/.ssh/id_rsa
+  455  eval "$(ssh-agent -s)"
+  456  ssh-add /root/.ssh/id_rsa
+  457  git push
+  458  cat /root/.ssh/id_rsa.pub 
+  459  ssh-keygen -t rsa -b 4096 -C "santiagoleklere@gmail.com"
+  460  ssh-add /root/.ssh/id_rsa_sl_github
+  461  git push
+  462  cat /root/.ssh/id_rsa_sl_github
+  463  cat /root/.ssh/id_rsa_sl_github.pub
+  464  git push
+  465  vim ~/.ssh/config
+  466  git push
+  467  git remote set-url git@github.com:j-leklere/ml-scraper-back.git
+  468  git remote set-url origin git@github.com:j-leklere/ml-scraper-back.git
+  469  git push
+  470  vim .gitignore
+  471  git add .
+  472  git status
+  473  git commit -m ".gitignore created"
+  474  git push
+  475  sudo tail -n 50 /var/log/nginx/error.log
+  476  sudo tail -n 50 /var/log/nginx/access.log
+  477  ls -l /etc/nginx/
+  478  ls -l /etc/nginx/sites-enabled/
+  479  vim /etc/nginx/nginx.conf 
+  480  cat /etc/nginx/nginx.conf 
+  481  cat /etc/nginx/sites-enabled/ml-scraper-back 
+  482  ls
+  483  vim ml_scraper/settings.py 
+  484  sudo systemctl restart nginx
+  485  sudo systemctl restart gunicorn.service 
+  486  sudo systemctl status nginx
+  487  sudo systemctl status gunicorn.service 
+  488  vim ml_scraper/settings.py 
+  489  sudo systemctl restart nginx
+  490  sudo systemctl restart gunicorn.service 
+  491  sudo systemctl status nginx
+  492  sudo systemctl status gunicorn.service 
+  493  vim /etc/nginx/nginx.conf 
+  494  cat /etc/nginx/sites-enabled/ml-scraper-back 
+  495  vim /etc/nginx/sites-enabled/ml-scraper-back 
+  496  cat /etc/nginx/sites-enabled/ml-scraper-back 
+  497  sudo nginx -t
+  498  vim /etc/nginx/sites-enabled/ml-scraper-back 
+  499  sudo systemctl restart nginx.service 
+  500  sudo systemctl restart gunicorn.service 
+  501  sudo tail -n 50 /var/log/nginx/access.log
+  502  ping localhost:8001
+  503  sudo tail -n 50 /var/log/nginx/access.log
+  504  cat ml_scraper/settings.py 
+  505  sudo tail -n 50 /var/log/nginx/access.log
+  506  sudo tail -n 50 /var/log/nginx/error.log
+  507  vim /etc/nginx/sites-enabled/
+  508  vim /etc/nginx/sites-enabled/ml-scraper-back 
+  509  ls
+  510  ls -a
+  511  ls ml_scraper/
+  512  ls -a ml_scraper
+  513  vim ml_scraper/settings.py 
+  514  sudo systemctl restart nginx
+  515  sudo systemctl restart gunicorn.service 
+  516  sudo systemctl daemon-reload 
+  517  sudo systemctl restart gunicorn.service 
+  518  history > history2.txt
