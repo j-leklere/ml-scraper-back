@@ -1,0 +1,6 @@
+django
+bs4
+requests
+cloudscraper
+pathlib
+django-cors-headers

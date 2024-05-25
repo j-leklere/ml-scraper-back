@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*m@b$*ob)2lc*(codq!5dngv*c*ri7(#a(-zh_c2p)b6r10!17
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["http://localhost:3000/", "http://localhost:3001/", "127.0.0.1:8000", "127.0.0.1"]
+ALLOWED_HOSTS = ["191.96.251.10", "jsj-server.com"]
 
 
 # Application definition
@@ -55,6 +55,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://jsj-scraper.com",
+    "https://www.jsj-scraper.com"
 ]
 
 ROOT_URLCONF = 'ml_scraper.urls'
