@@ -4,3 +4,4 @@ requests
 cloudscraper
 pathlib
 django-cors-headers
+unidecode

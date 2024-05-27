@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+from unidecode import unidecode
 
 def get_page(url):
     """Requests and fetches the content of a web page."""
@@ -119,4 +120,113 @@ def scrape_mercado_libre(search_query, max_results):
             'promedio': promedio_usd
         },
         'results': results,
+    }
+
+def to_camel_case(snake_str):
+    components = snake_str.split()
+    return components[0].lower() + ''.join(x.title() for x in components[1:])
+
+def scrape_mercado_libre_product(url):
+    html = get_page(url)
+    if html is None:
+        return {"error": "No se pudo obtener la página"}
+
+    soup = BeautifulSoup(html, 'html.parser')
+
+    title_element = soup.find('h1', class_='ui-pdp-title')
+    nombre = title_element.text.strip() if title_element else 'Nombre no disponible'
+
+    image_element = soup.find('img', class_='ui-pdp-image')
+    imagen = image_element['src'] if image_element else 'Imagen no disponible'
+
+    seller_container = soup.find('div', class_='ui-pdp-seller__header__info-container__title')
+    seller_element = seller_container.find('a', class_='ui-pdp-action-modal__link') if seller_container else None
+    vendedor = seller_element.text.strip() if seller_element else 'Vendedor no disponible'
+
+    cont = None
+    cont2 = None
+    section = None
+    characteristics_container2 = None
+    characteristics_container = None
+
+    caracteristicas = {}
+    cont = soup.find('div', class_='ui-pdp-container--pdp')
+    if cont:
+        cont2 = cont.find('div', class_='ui-pdp--sticky-wrapper-center')
+        if cont2:
+            section = cont2.find('section', class_='ui-vpp-highlighted-specs pl-45 pr-45')
+            if section:
+                characteristics_container2 = section.find('div', class_='ui-pdp-container__row--attributes')
+                if characteristics_container2:
+                    characteristics_container = characteristics_container2.find('div', class_='ui-vpp-highlighted-specs__attribute-columns')
+
+
+    print("cont2:", cont2)
+    print("section:", section)
+    print("characteristics_container2:", characteristics_container2)
+    print("characteristics_container:", characteristics_container)
+
+    if characteristics_container:
+        characteristics_columns = characteristics_container.find_all('div', class_='ui-vpp-highlighted-specs__attribute-columns__column')
+        for column in characteristics_columns:
+            rows = column.find_all('div', class_='ui-vpp-highlighted-specs__attribute-columns__row')
+            for row in rows:
+                key_value_element = row.find('p', class_='ui-vpp-highlighted-specs__key-value__labels__key-value')
+                if key_value_element:
+                    key_element = key_value_element.find('span', class_='ui-pdp-family--REGULAR')
+                    value_element = key_value_element.find('span', class_='ui-pdp-family--SEMIBOLD')
+                    if key_element and value_element:
+                        key = key_element.text.strip()[:-1]
+                        value = value_element.text.strip()
+                        camel_case_key = to_camel_case(unidecode(key))
+                        caracteristicas[camel_case_key] = value
+
+    precio_original = None
+    precio_con_descuento = None
+    descuento = None
+    actual_price_currency = None
+
+    try:
+        price_container = soup.find('div', class_='ui-pdp-price__main-container')
+        if price_container:
+            actual_price_element = price_container.find('div', class_='ui-pdp-price__second-line')
+            original_price_element = price_container.find('s', class_='ui-pdp-price__original-value')
+            discount_element = actual_price_element.find('span', class_='andes-money-amount__discount') if actual_price_element else None
+
+            actual_price_text = None
+            original_price_text = None
+            discount_text = None
+
+            if actual_price_element:
+                actual_price_fraction = actual_price_element.find('span', class_='andes-money-amount__fraction')
+                actual_price_text = (actual_price_fraction.text).replace('.', '').replace(',', '.') if actual_price_fraction else None
+                actual_price_currency = actual_price_element.find('span', class_='andes-money-amount__currency-symbol').text.replace('.', '').replace(',', '.')
+            if original_price_element:
+                original_price_text = original_price_element.find('span', class_='andes-money-amount__fraction').text.replace('.', '').replace(',', '.')
+            if discount_element:
+                discount_text = discount_element.text.strip('% OFF')
+
+            if original_price_text != None:
+                precio_original = float(original_price_text)
+            if actual_price_text != None:
+                precio_con_descuento = float(actual_price_text)
+            if discount_text != None:
+                descuento = int(discount_text)
+
+    except AttributeError as e:
+        print(f"Error al obtener precios: {e}")
+
+    precio = {
+        'precioPrevio': precio_original,
+        'precioActual': precio_con_descuento,
+        'descuento': descuento,
+        'moneda': actual_price_currency
+    }
+
+    return {
+        'nombre': nombre,
+        'imagen': imagen,
+        'precio': precio,
+        'vendedor': vendedor,
+        'caracteristicas': caracteristicas
     }

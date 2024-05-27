@@ -1,10 +1,11 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .ml_scraper import scrape_mercado_libre
+from .ml_scraper import scrape_mercado_libre, scrape_mercado_libre_product
 import json
+from urllib.parse import unquote
 
 @csrf_exempt
-def scrape(request, search_query, max_results=50):
+def scrape(request, search_query, max_results):
     try:
         results = scrape_mercado_libre(search_query, int(max_results))
         return JsonResponse(results)
@@ -12,7 +13,16 @@ def scrape(request, search_query, max_results=50):
         return JsonResponse({'error': str(e)}, status=500)
 
 @csrf_exempt
-def saveProduct(request):
+def scrapeProduct(request, search_url):
+    try:
+        decoded_url = unquote(search_url)
+        details = scrape_mercado_libre_product(decoded_url)
+        return JsonResponse(details)
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+@csrf_exempt
+def saveSearchProduct(request):
     try:
         if request.method == "POST":
             data = json.loads(request.body)
