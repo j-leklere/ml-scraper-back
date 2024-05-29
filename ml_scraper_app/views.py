@@ -3,6 +3,9 @@ from django.views.decorators.csrf import csrf_exempt
 from .ml_scraper import scrape_mercado_libre, scrape_mercado_libre_product
 import json
 from urllib.parse import unquote
+from rest_framework import viewsets
+from .models import Product, Search, User
+from .serializers import ProductSerializer, SearchSerializer
 
 @csrf_exempt
 def scrape(request, search_query, max_results):
@@ -42,3 +45,52 @@ def saveSearchProduct(request):
             
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
+
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+class SearchViewSet(viewsets.ModelViewSet):
+    queryset = Search.objects.all()
+    serializer_class = SearchSerializer
+
+@csrf_exempt
+def login(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data.get('username')
+        password = data.get('password')
+
+        try:
+            user = User.objects.get(name=username, password=password)
+            return JsonResponse({'success': True, 'user_id': user.id})
+        except User.DoesNotExist:
+            return JsonResponse({'success': False, 'error': 'Invalid credentials'}, status=401)
+    else:
+        return JsonResponse({'error': 'Only POST method is allowed'}, status=405)
+
+@csrf_exempt
+def saveSearch(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            print("Datos recibidos:", data)
+            name = data['name']
+            term = data['term']
+            quantity = data['quantity']
+            user_id = data['userId']
+
+            print("Preparando para guardar búsqueda...") 
+
+            search = Search(name=name, term=term, results=quantity, user_id=user_id)
+            search.save()
+
+            print("Búsqueda guardada correctamente.")
+
+            return JsonResponse({'status': 'success', 'message': 'Search saved successfully'})
+        except Exception as e:
+            print("Error al guardar la búsqueda:", e)
+            return JsonResponse({'status': 'error', 'message': str(e)})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+

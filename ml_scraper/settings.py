@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*m@b$*ob)2lc*(codq!5dngv*c*ri7(#a(-zh_c2p)b6r10!17
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["191.96.251.10", "jsj-server.com", "www.jsj-server.com", "localhost"]
+ALLOWED_HOSTS = ["191.96.251.10", "jsj-server.com", "www.jsj-server.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ml_scraper_app',
+    'rest_framework',
     'corsheaders',
 ]
 
@@ -85,8 +86,13 @@ WSGI_APPLICATION = 'ml_scraper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'jsj_scraper',
+        'USER': 'root',
+        'PASSWORD': '1234',
+        'HOST': '127.0.0.1'
+        #'PORT': '3306'
+
     }
 }
 

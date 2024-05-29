@@ -5,3 +5,5 @@ cloudscraper
 pathlib
 django-cors-headers
 unidecode
+mysqlclient
+rest_framework
