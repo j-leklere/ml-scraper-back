@@ -1,5 +1,16 @@
 from django.urls import path, include
-from .views import scrape, scrapeProduct, saveSearchProduct, ProductViewSet, SearchViewSet, login, saveSearch
+from .views import (
+    scrape, 
+    scrapeProduct, 
+    saveSearchProduct, 
+    ProductViewSet, 
+    SearchViewSet, 
+    login, 
+    saveSearch, 
+    getSearchesByUser,
+    getOwnProductsByUser,
+    getSavedProductsByUser
+)
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
@@ -12,5 +23,8 @@ urlpatterns = [
     path('product/scrape/<str:search_url>', scrapeProduct, name='scrapeProduct'),
     path('save-search', saveSearch, name='saveSearch'),
     path('login', login, name='login'),
+    path('get-searches', getSearchesByUser, name='getSearchesByUser'),
+    path('get-own-products', getOwnProductsByUser, name='getOwnProductsByUser'),
+    path('get-saved-products', getSavedProductsByUser, name='getSavedProductsByUser'),
     path('', include(router.urls)),
 ]

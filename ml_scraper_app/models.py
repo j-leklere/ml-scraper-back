@@ -11,12 +11,12 @@ class User(models.Model):
     role = models.ForeignKey(Role, on_delete=models.CASCADE)
 
 class Product(models.Model):
-    name = models.CharField(max_length=100)
-    url = models.URLField()
-    image_url = models.URLField()
-    price_ars = models.DecimalField(max_digits=10, decimal_places=2)
-    price_usd = models.DecimalField(max_digits=10, decimal_places=2)
-    discount = models.IntegerField()
+    name = models.CharField(max_length=150)
+    url = models.CharField(max_length=500)
+    image_url = models.CharField(max_length=500)
+    price_ars = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    price_usd = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    discount = models.IntegerField(null=True)
     currency = models.CharField(max_length=10)
     is_own = models.BooleanField(default=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

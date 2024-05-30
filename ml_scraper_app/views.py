@@ -94,3 +94,50 @@ def saveSearch(request):
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
 
+@csrf_exempt
+def getSearchesByUser(request):
+    if request.method == 'GET':
+        try:
+            user_id = request.GET.get('user_id')
+            print("UserId", user_id)
+            searches = Search.objects.filter(user_id=user_id)
+            print(searches)
+            serializer = SearchSerializer(searches, many=True)
+            print(serializer)
+            return JsonResponse({'status': 'success', 'data': serializer.data})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+
+@csrf_exempt
+def getOwnProductsByUser(request):
+    if request.method == 'GET':
+        try:
+            user_id = request.GET.get('user_id')
+            print("UserId", user_id)
+            products = Product.objects.filter(user_id=user_id, is_own=True)
+            print(products)
+            serializer = ProductSerializer(products, many=True)
+            print(serializer)
+            return JsonResponse({'status': 'success', 'data': serializer.data})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+
+@csrf_exempt
+def getSavedProductsByUser(request):
+    if request.method == 'GET':
+        try:
+            user_id = request.GET.get('user_id')
+            print("UserId", user_id)
+            products = Product.objects.filter(user_id=user_id, is_own=False)
+            print(products)
+            serializer = ProductSerializer(products, many=True)
+            print(serializer)
+            return JsonResponse({'status': 'success', 'data': serializer.data})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'})

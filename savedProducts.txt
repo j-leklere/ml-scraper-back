@@ -42,3 +42,27 @@ Precio: $37900
 Nombre: Toyota Corolla Cross 1.8 Seg Ecvt
 Link: https://auto.mercadolibre.com.ar/MLA-1425314737-toyota-corolla-cross-2024-18-seg-hybrido-ect-_JM#position=1&search_layout=grid&type=item&tracking_id=18b24346-7088-4a1d-916f-9d658988feb2
 
+Precio: $5490000
+Nombre: Fiat Cronos 1.3 Gse Drive Cvt Pack Plus
+Link: https://auto.mercadolibre.com.ar/MLA-1429553415-doy-a-pagar-fiat-cronos-2024-0km-tomo-auto-usado-2023-208-fc-_JM#position=4&search_layout=grid&type=item&tracking_id=e45b4a16-722d-4051-8de8-b68db2cfe5ee
+
+Precio: $9999900
+Nombre: Renault Sandero 1.6 Privilege 105cv
+Link: https://auto.mercadolibre.com.ar/MLA-1429656939-renault-sandero-privilege-stepway-fit-etios-gol-cross-eco-ac-_JM#position=2&search_layout=grid&type=item&tracking_id=e45b4a16-722d-4051-8de8-b68db2cfe5ee
+
+Precio: $9999900
+Nombre: Renault Sandero 1.6 Privilege 105cv
+Link: https://auto.mercadolibre.com.ar/MLA-1429656939-renault-sandero-privilege-stepway-fit-etios-gol-cross-eco-ac-_JM#position=2&search_layout=grid&type=item&tracking_id=e45b4a16-722d-4051-8de8-b68db2cfe5ee
+
+Precio: $9999900
+Nombre: Renault Sandero 1.6 Privilege 105cv
+Link: https://auto.mercadolibre.com.ar/MLA-1429656939-renault-sandero-privilege-stepway-fit-etios-gol-cross-eco-ac-_JM#position=2&search_layout=grid&type=item&tracking_id=e45b4a16-722d-4051-8de8-b68db2cfe5ee
+
+Precio: $12600000
+Nombre: Fiat Toro 1.8 170 E-torq Evo Freedom At6
+Link: https://auto.mercadolibre.com.ar/MLA-1790365090-fiat-toro-0km-autos-usados-promos-amarok-strada-palio-l-_JM#position=15&search_layout=grid&type=item&tracking_id=e45b4a16-722d-4051-8de8-b68db2cfe5ee
+
+Precio: $14500000
+Nombre: Fiat Cronos 1.3 Gse Drive Cvt Pack Plus
+Link: https://auto.mercadolibre.com.ar/MLA-1790494424-fiat-cronos-0km-liquidacion-fastback-toro-usada-nissan-up-lp-_JM#position=13&search_layout=grid&type=item&tracking_id=e45b4a16-722d-4051-8de8-b68db2cfe5ee
+
