@@ -20,9 +20,9 @@ def scrapeProduct(request, search_url):
     try:
         decoded_url = unquote(search_url)
         details = scrape_mercado_libre_product(decoded_url)
-        return JsonResponse(details)
+        return JsonResponse({'success': True, 'data': details})
     except Exception as e:
-        return JsonResponse({'error': str(e)}, status=500)
+        return JsonResponse({'error': str(e), 'success': False}, status=500)
 
 @csrf_exempt
 def saveSearchProduct(request):

@@ -1,3 +1,4 @@
+import re
 from bs4 import BeautifulSoup
 import requests
 from unidecode import unidecode
@@ -139,8 +140,18 @@ def scrape_mercado_libre_product(url):
     image_element = soup.find('img', class_='ui-pdp-image')
     imagen = image_element['src'] if image_element else 'Imagen no disponible'
 
-    seller_container = soup.find('div', class_='ui-pdp-seller__header__info-container__title')
-    seller_element = seller_container.find('a', class_='ui-pdp-action-modal__link') if seller_container else None
+    state_element = soup.find('span', class_='ui-pdp-subtitle')
+    state_text = state_element.text.strip() if state_element else ''
+
+    if '|' in state_text:
+        state, units_sold_text = [part.strip() for part in state_text.split('|')]
+        units_sold_match = re.search(r'\+?(\d+)', units_sold_text)
+        units_sold = f"+{units_sold_match.group(1)}" if units_sold_match else None
+    else:
+        state = state_text
+        units_sold = None
+
+    seller_element = soup.find('button', class_='ui-pdp-seller__link-trigger-button')
     vendedor = seller_element.text.strip() if seller_element else 'Vendedor no disponible'
 
     cont = None
@@ -159,7 +170,6 @@ def scrape_mercado_libre_product(url):
                 characteristics_container2 = section.find('div', class_='ui-pdp-container__row--attributes')
                 if characteristics_container2:
                     characteristics_container = characteristics_container2.find('div', class_='ui-vpp-highlighted-specs__attribute-columns')
-
 
     print("cont2:", cont2)
     print("section:", section)
@@ -204,7 +214,7 @@ def scrape_mercado_libre_product(url):
             if original_price_element:
                 original_price_text = original_price_element.find('span', class_='andes-money-amount__fraction').text.replace('.', '').replace(',', '.')
             if discount_element:
-                discount_text = discount_element.text.strip('% OFF')
+                discount_text = discount_element.text.strip('% OFF').replace('%', '')
 
             if original_price_text != None:
                 precio_original = float(original_price_text)
@@ -228,5 +238,7 @@ def scrape_mercado_libre_product(url):
         'imagen': imagen,
         'precio': precio,
         'vendedor': vendedor,
+        'estado': state,
+        'unidadesVendidas': units_sold,
         'caracteristicas': caracteristicas
     }
